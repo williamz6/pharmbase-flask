@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% include 'includes/_messages.html' %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+   
+    <title>{{  title }}</title>
+
+    <!-- Bootstrap core CSS -->
+    
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <!-- Custom styles for this template -->
+  <link href="{{ url_for( 'static', filename='css/cover.css' ) }}" rel="stylesheet">
+  <link href="{{ url_for( 'static', filename='css/qty.css' ) }}" rel="stylesheet">
+  <link href="{{ url_for( 'static', filename='css/paginate.css' ) }}" rel="stylesheet">
+  
+  </head>
+  <body class=" body-bg">
+    <div class="container-fluid p-0 m-0">
+  
+      
+      {% block body %}
+      
+      {% endblock %}
+
+      {% include 'includes/_footer.html' %}
+    </div>
+    
+
+    {% include 'includes/_scripts.html' %}
+</body>
+</html>

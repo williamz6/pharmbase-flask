@@ -1,0 +1,123 @@
+{% import "bootstrap/wtf.html" as wtf %}{% include 'admin/dashboard/admin-layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ title }}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script> -->
+  </head>
+
+  <body>
+    <center>
+      <h1>{{ title }}</h1>
+      
+      <canvas class="position-relative" id="myChart" style="margin:auto; width:80vw; height: 80vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                  {% for item in labels %}
+                    "{{item.name}}",
+                  {% endfor %}
+                ],
+                datasets: [{
+                    label: 'Remaining quantity',
+                    data: [
+                      {%  for item in values %}
+                          "{{item.available_quantity}}",
+                      {% endfor %}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+        </script>
+      <!-- <script>
+
+          // bar chart data
+          var barData = {
+            labels : [
+              {% for item in labels %}
+                "{{ item.name }}",
+              {% endfor %}
+            ],
+
+            datasets : [{
+              fillColor: "rgb(78 115 223)",
+              strokeColor: "#000",
+              pointColor: "rgba(151,187,205,1)",
+              pointStrokeColor: "#fff",
+              pointHighlightFill: "#fff",
+              pointHighlightStroke: "rgba(240, 52, 52, 1)",
+              bezierCurve : false,
+              data : [
+                {% for item in values %}
+                    "{{ item.available_quantity }}",
+                {% endfor %}]
+            }
+         ]
+        }
+
+          Chart.defaults.global.animationSteps = 50;
+          Chart.defaults.global.tooltipYPadding = 16;
+          Chart.defaults.global.tooltipCornerRadius = 0;
+          Chart.defaults.global.tooltipTitleFontStyle = "normal";
+          Chart.defaults.global.tooltipFillColor = "rgb(78 115 223)";
+          Chart.defaults.global.animationEasing = "easeOutBounce";
+          Chart.defaults.global.responsive = true;
+          Chart.defaults.global.maintainAspectRatio = false;
+          Chart.defaults.global.scaleLineColor = "black";
+          Chart.defaults.global.scaleFontSize = 12;
+
+          // get bar chart canvas
+          var mychart = document.getElementById("chart").getContext("2d");
+          steps = 10
+          max = "{{max}}"
+           // draw bar chart<br />
+          new Chart(mychart).Bar(barData, {
+                scaleOverride: true,
+                scaleSteps: steps,
+                scaleStepWidth: Math.ceil(max / steps),
+                scaleStartValue: 0,
+                scaleShowVerticalLines: true,
+                scaleShowGridLines : true,
+                barShowStroke : true,
+                scaleShowLabels: true
+          });
+      </script> -->
+    </center>
+    {% include 'includes/_scripts.html' %}
+    
+<script src="{{url_for('static', filename='js/sb-admin-2.min.js')}}"></script>
+  </body>
+</html>

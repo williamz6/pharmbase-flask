@@ -1,0 +1,73 @@
+
+{% extends '/base.html' %}
+{% block body %}
+{% include 'includes/_navbar.html' %}
+<div class="container">
+    <hr style="margin: 0; border: none; height: 2em;" class="hr">
+    <div class="card login-card  border-0">
+        <div class="card-body">
+            <div class="row">
+                
+                <div class="col-md-5">
+                    <div class=" ">
+                       <div class="d-block text-center mx-auto">
+                        <hr style="margin: 0; border: none; height: 5em;" class="hr">
+                        <img src="{{url_for('static', filename='images/lab.png')}}" class="img-fluid  mx-auto" >
+                        <h1 class="font-weight-bolder text-responsive">Pharmbase&nbsp;{{title}}</h1>
+                        
+                       </div>
+                        
+                      </div>
+                </div>
+                <div class=" col-md-7">
+                    <form method="POST" action="" class="border-dark">
+                        {{ form.hidden_tag() }}
+                        <fieldset class="form-group">
+                            <!-- <legend class="border-bottom mb-4 login100-form-title">Login</legend> -->
+                            <hr class="hidden" style="border: none; margin: 0; height: 2rem;">
+                            <div class="form-group">
+                                {{ form.email.label(class="form-control-label") }}
+                                {% if form.email.errors %}
+                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.email.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.email(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+                                {% if form.password.errors %}
+                                    {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.password.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.password(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-check">
+                              {{ form.remember(class="form-check-input") }}        
+                              {{ form.remember.label(class="form-check-label") }}        
+                          </div>
+                        </fieldset>
+                        <div class="form-group">
+                            {{ form.submit(class="btn btn-info btn-sm") }}
+                        </div>
+                    </form>
+                    <div>
+                        <p class="float-right mt-5">Not registered? <a href="{{url_for('auth.register')}}">visit our registration page</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+{% endblock %}
+

@@ -1,0 +1,147 @@
+{%  extends 'base.html' %}
+{% block body %}
+<div class="container-fluid p-0 m-0">
+    <header class="header">
+      <div class="inner shadow first_bg">
+       
+        {% include 'includes/_navbar.html' %}
+         <section class="feature">
+           <div class="container h-100 feature-content">
+               <div class="row h-100 align-items-center">
+                 <div class="col-lg-6">
+                   <div style="margin-top: 3rem;" class="cont-box">
+                     <h1 class="mb-4">
+                       Pharmbase
+                       <br> 
+                       <small>Drug Inventory Software</small>                     
+                     </h1>
+                     
+                     <p class="p-text mb-lg-5 text-capitalize">
+                      A Flexible Inventory Management System use to track medical inventory while tagging critical information such as supply stock levels, medication expiration dates and more.
+                    </p>
+                    <button class="btn btn-custom btn-lg">know more &nbsp; <i class="fa fa-arrow-right"></i></button>
+                    </div>
+                 </div>
+               </div>
+           </div>
+         </section>
+      </div>
+    </header>
+    <main class="mt-5 ">
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="text-center">
+                <img src="{{url_for('static', filename='images/rectangle-2.png')}}">
+                <h3 class="text-uppercase">Who we are</h3>
+              </div>
+              <div class="mt-3 text-justify about">
+                <p>
+                  Pharmbase is an emerging online and offline management system that proffers inventory management solutions to pharmacies.
+                  Pharmbase allows you manage up to 100 entries as well as schedule and track orders
+                </p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="single-image float-right">
+                <figure>
+                  <img src="{{url_for('static', filename='images/pharmacy.svg')}}" class="img-fluid" width="300" height="85">
+                </figure>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="text-center">
+                  <div class="">
+                    <img src="{{url_for('static', filename='images/rectangle-2.png')}}">
+                    <p class="lead">Our Vision</p>
+                    <p>To be efficient and effective in inventory industry</p>
+                  </div>
+                  <div class="">
+                    <img src="{{url_for('static', filename='images/rectangle-2.png')}}">
+                    <p class="lead">Our Mission</p>
+                    <p>
+                      To develop, enhance and maintain our strong relationship with our products, suppliers and the other functional areas.
+
+<!-- Provide the organization with the appropriate supplies in the right quantity and in good condition,  in order secure a non-interrupted operations & to maintain our competitive advantage  and further improve our renowned corporate image -->
+                    </p>
+                  </div>
+                </div>                
+              </div>
+              <div class="col-md-6">
+                <div class="text-center">
+                  <img src="{{url_for('static', filename='images/rectangle-2.png')}}">
+                  <p class="lead">Our Values</p>
+                  <ul class="list-group">
+                    <li class="list-group-item">Accuracy</li>
+                    <li class="list-group-item">Speed</li>
+                    <li class="list-group-item">Reliability</li>
+                    <li class="list-group-item">Understandability </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <section class="bg-gray mt-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="gap text-center">
+                <img src="{{url_for('static', filename='images/rectangle-2.png')}}">
+              </div>
+              <h4 class="mt-2 mb-2 text-center">About Pharmbase</h4>
+              <p class="text-center">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus accusamus harum quibusdam voluptatibus dolore, voluptates itaque, 
+                laborum commodi quo sit est dignissimos non fuga, placeat architecto molestiae deserunt tempore. Itaque.
+              </p>
+            </div>
+          </div>
+         <div class="mt-5">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card br-5" style="width: 18rem;">
+                <img class="card-img-top p-1" src="{{url_for('static', filename='images/undraw_doctors_hwty.svg')}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pharmbase</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-custom">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card br-5" style="width: 18rem;">
+                <img class="card-img-top p-1" src="{{url_for('static', filename='images/undraw_medical_care_movn.svg')}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pharmbase</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-custom">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card br-5" style="width: 18rem;">
+                <img class="card-img-top p-1" src="{{url_for('static', filename='images/undraw_medicine_b1ol.svg')}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pharmbase</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-custom">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div>
+      </section>
+        
+    </main>
+
+  </div>
+                
+{% endblock %}                 

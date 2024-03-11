@@ -1,0 +1,112 @@
+{% include 'admin/dashboard/admin-layout.html' %}
+<div class="container-fluid">
+  <div class="">
+    <div class="">
+
+      <div class="inner">
+        <div class="center">
+          {% if result %}
+          <div class="">
+            <div class="mb-3 mt-5">
+              <div class="float-right">
+                <a href="{{url_for('admin.add_drug')}}" class="btn btn-primary btn-sm mt-2 mb-2">
+                  <i class="fa fa-plus"></i> Add drug
+                </a>
+              </div>
+              <table class="table table-bordered table-hover table-responsive-sm table-light shadow">
+                <thead>
+                  <tr>
+                    <th class="text-center">S/N</th>
+                    <th class="text-center">Order Id</th>
+                    <th class="text-center"> Drug Name </th>
+                    <th class="text-center"> Location Shipped To </th>
+                    <th class="text-center"> Amount Shipped </th>
+                    <th class="text-center"> Date </th>
+
+                    <th class="text-center" colspan="3">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for order in result.items %}
+                  <tr>
+                    <th class="text-center" scope="row">{{ loop.index}}</th>
+                    <td class="text-center">PHARM-ORD-{{order.id}}</td>
+                    <td class="text-center">{{order.name}}</td>
+                    <td class="text-center">{{order.location}}</td>
+                    <td class="text-center">{{order.quantity_received}}</td>
+                    <td class="text-center">{{order.time_shipped.strftime('%Y-%B-%d')}}</td>
+
+                    <td class="d-flex justify-content-around">
+                      <a href="" class="mr-1 "><i class="fa fa-edit fa-sm"></i></a>
+                      <a href="{{ url_for('admin.list_orders', id=order.id)}}" class="mr-1 ">
+                        <i class="fa fa-trash fa-sm"></i>
+                      </a>
+                      <a href="{{ url_for('admin.movement', id=order.id) }}" class="mr-1 ">
+                        <i class="fa fa-share-alt-square fa-sm"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+
+
+
+            </div>
+          </div>
+
+          {% else %}
+          <div class="text-center">
+            <p class="lead">No Order<small>(s)</small> in Pharmbase</p>
+            <a href="{{url_for('admin.add_drug')}}" class="btn btn-custom"><i class="fas fa-plus"></i> Add Drug</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <ul class="list-unstyled d-flex justify-content-between">
+        {% if result.has_prev %}
+        <li>
+          <a href="{{url_for('admin.list_orders', page=result.prev_num)}}"><i class="fas fa-arrow-left"></i></a>
+        </li>
+        {% endif %}
+
+        <!-- all page numbers -->
+        {% for page in result.iter_pages() %}
+        {% if page %}
+        {% if page != result.page %}
+        <li>
+          <a href="{{ url_for('admin.list_orders', page=page) }}">{{ page }}</a>
+        </li>
+        {% else %}
+        <li class="active">
+          <a href="#">{{ page }}</a>
+        </li>
+        {% endif %}
+        {% else %}
+        <li>
+          <span class="ellipsis" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis">…</span>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+        <!-- next page -->
+        {% if result.has_next %}
+        <li>
+          <a href="{{ url_for('admin.list_orders', page=drugs.next_num) }}"><i class="fas fa-arrow-right"></i></a>
+        </li>
+        {% endif %}
+      </ul>
+
+      </tbody>
+      </table>
+
+      <hr>
+
+    </div>
+  </div>
+</div>
+
+{% include 'includes/_scripts.html' %}
+
+<script src="{{url_for('static', filename='js/sb-admin-2.min.js')}}"></script>

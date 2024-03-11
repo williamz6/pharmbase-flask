@@ -1,0 +1,66 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <a class="navbar-brand border p-2" href="{{url_for('home.homepage')}}"><img width="32" src="{{url_for('static', filename='images/pharmbase.svg')}}">PHARMBASE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      
+      <ul class="navbar-nav mx-auto">
+        {% if current_user.is_authenticated %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('home.homepage')}}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('admin.admin_page')}}">Dashboard</a>
+        <!-- </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Inventory
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{url_for('admin.list_drugs')}}">Drugs</a>
+            <a class="dropdown-item" href="{{url_for('admin.list_orders')}}">Orders</a>
+            <a class="dropdown-item" href="#">Manage Inventory</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+         -->
+
+        {% endif %}
+      </ul>
+      
+      <ul class="navbar-nav ml-auto">
+        {% if current_user.is_authenticated %}
+          <!-- if user is adding a drug -->
+          {% if add_drug %}
+          <li class="nav-item">
+            <a class="nav-link badge badge-default btn-sm" href="{{url_for('admin.list_drugs')}}">View Drugs</a>
+          </li>
+          
+        
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link badge badge-default btn-sm" href="{{url_for('auth.logout')}}" >logout</a>
+        </li>
+        
+
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link badge badge-default btn-sm" href="{{url_for('auth.login')}}" >Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link badge badge-default btn-sm" href="{{url_for('auth.register')}}">Register</a>
+        </li>
+        {% endif %}
+        
+      </ul>
+    </div>
+  </nav>

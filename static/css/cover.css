@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.bg-gray{
+    background-color:#f6f5f5;
+}
+
+.br-5{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.br-20{
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+body,html {
+        margin: 0;
+        padding: 0;
+       height:100%;        
+}
+.text-responsive {
+    font-size: calc(100% + 1vw + 1vh);
+  }
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {  
+    h1 {font-size:1.5rem;} /*1rem = 16px*/
+    .card{
+        max-width: 100%!important;
+    }
+  }
+   
+  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+  @media (min-width: 768px) {  
+    h1 {font-size:2rem;} /*1rem = 16px*/
+    .bg-img{
+        height: 100%!important;
+        max-width: 100%;
+    }
+    .login-card img{
+        width: 100%!important;
+        max-width: 100%;
+    }
+  }
+   
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    h1 {
+        font-size:2rem;
+    } /*1rem = 16px*/
+    .feature-content .cont-box p{
+        font-size: 1rem!important;
+    }
+  }
+   
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {  
+    h1 {font-size:3rem;} /*1rem = 16px*/    
+  }
+   
+  /*
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::
+  Custom media queries
+  */
+   
+  /* Set width to make card deck cards 100% width */
+  @media (min-width: 950px) and (max-width:1100px) { 
+    h1 {
+        font-size:2.75rem;
+    } 
+    .feature-content .cont-box{
+        padding: 2.5rem 1.5rem;
+    }
+    .feature-content .cont-box h1 span{
+        font-size: 1.7rem;
+    }
+  }
+
+/* .p-text{    
+    font-weight: 400;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #fff;
+
+} */
+
+
+.feature{
+    background: url('../images/banner.jpg') no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    /* filter: grayscale(0.2); */
+    height: 700px;
+    max-width: 100%;
+    /* -webkit-filter: grayscale(0.2); */
+}
+.feature-content{
+    text-align: center;
+}
+/* .feature-content .cont-box h1{
+    text-shadow: 1px 1px 1px #000;
+} */
+.feature-content .cont-box h1 span{
+    font-size: 2rem;
+    font-weight: 300;
+}
+.feature-content .cont-box{
+    background-color: rgba(255,255,255,0.8);
+    padding: 40px 32px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    
+}
+.feature-content .cont-box p{
+    color: #000;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+.gap{
+    position: relative;
+    margin-top: 3.5rem;
+}
+.login-card{
+    
+    position: relative;
+}
+.login-card .img{
+    height: 69.5vh;
+    position: absolute;
+    top: -4.5%;
+    left: 0;
+    z-index: -1;
+    margin-left: -5px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    border-radius: 0% 0% 18% 100% / 10% 19% 13% 21% ;
+    -webkit-border-radius: 0% 0% 18% 100% / 10% 19% 13% 21% ;
+    -moz-border-radius: 0% 0% 18% 100% / 10% 19% 13% 21% ;
+    -ms-border-radius: 0% 0% 18% 100% / 10% 19% 13% 21% ;
+    -o-border-radius: 0% 0% 18% 100% / 10% 19% 13% 21% ;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background:linear-gradient(90deg, rgba(235,223,228,1) 0%, rgba(172,190,212,0.7959558823529411) 100%);
+}
+
+ .btn-custom {
+        display: inline-block;
+        padding: 12px 32px;
+        background:linear-gradient(90deg, rgb(108 99 255) 0%, rgba(172,190,212,0.7959558823529411) 100%); /*ACBDE4*/
+        color: #fff;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: 0;
+        font-family: "Avenir Next",Avenir,sans-serif;
+        font-weight: 400;
+        font-size: .875rem;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        border: none;
+        border-radius: 4px;
+}
+@media only screen and (max-width:760px){
+    .card{
+        width: 100%!important;
+        max-width: auto;
+    }
+    
+}
+.doc-cards .card{
+    background: #fff;
+    -webkit-box-shadow: 0 15px 35px 0 rgba(43,64,78,0.1), 0 5px 15px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px 0 rgba(43,64,78,0.1), 0 5px 15px 0 rgba(0,0,0,0.05);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.doc-cards img{
+    margin:  0 auto 2rem;
+    height: 7.5rem;
+}
+/* scroll bar section */
+ ::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow:linear-gradient(90deg, rgba(235,223,228,1) 0%, rgba(172,190,212,0.7959558823529411) 100%);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+/* end scroll bar section */
+
+/* single drug section */
+.box{
+    position: relative;
+    width: 10rem;
+    height: 2rem;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    width: 82%;
+    height: 93%;
+    top: 12%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    opacity: 90;
+    background-color: inherit;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+.custom-blue{
+    background:linear-gradient(90deg, rgb(108 99 255) 0%, rgba(172,190,212,0.7959558823529411) 100%);
+}
+/* end single drug section */
+
+
+/* dashboard */
+.close-icon {
+    cursor: pointer;
+  }
+/* snd of dashboard */
